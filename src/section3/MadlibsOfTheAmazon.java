@@ -7,16 +7,27 @@ public class MadlibsOfTheAmazon {
 	public static void main(String[] args) {
 		// Put this sentence in a pop up:
 		// If you find yourself having to cross a piranha-infested river, here's how to do it...
+		JOptionPane.showMessageDialog(null, "If you find yourself having to cross a pirannha-infested river, here's how you do it" );
 		
 		// Get the user to enter an adjective
+		String adjective = JOptionPane.showInputDialog("ENTER ADJECTIVE");
 
+		
 		// Get the user to enter a type of liquid
+		String liquid = JOptionPane.showInputDialog(null, "ENTER LIQUID");
+				
 
 		// Get the user to enter a body part
+		String bodyPart = JOptionPane.showInputDialog("ENTER BODY PART");
 
 		// Get the user to enter a verb
+		String verb = JOptionPane.showInputDialog("ENTER VERB");
+		
 
 		// Get the user to enter a place
+		String place = JOptionPane.showInputDialog("ENTER A PLACE");
+		
+		
 
 		// Fit the user's words into this sentence, and save it in a String:
 		// Piranhas are more [adjective] during the day, so cross the river at
@@ -24,8 +35,16 @@ public class MadlibsOfTheAmazon {
 		// likely take a bite out of your [body part] if you [verb]. Whatever
 		// you do, if you have an open wound, try to find another way to get
 		// back to the [place]. Good luck!
+		String madLib = "Pirannahs are more "+adjective+" during the day, so cross the river at\n"
+				+ " night. Pirranhas are attracted to fresh "+liquid+" and will most \n"
+				+"likely take a bite out of your "+bodyPart+" if you "+verb+" . Whatever\n"
+				+"you do, if you have an open wound, try to find another way to get\n"
+				+"back to the "+place+". Good luck!";
+		JOptionPane.showMessageDialog(null,madLib);
 		
 		// Make a pop-up for the final story. You can use \n to go to the next line
+		
+		// \n
 		
 
 	}
