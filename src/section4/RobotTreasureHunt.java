@@ -16,42 +16,65 @@ import org.jointheleague.graphical.robot.Robot;
 public class RobotTreasureHunt implements KeyEventDispatcher{
 
 	// 1. Create a new mini robot (type "mini" inside the parentheses)
+	Robot robo = new Robot("mini");
 	
 	private void goUp() throws InterruptedException {
 		// 2. Make the robot move up the screen (use setAngle(angle) and microMove(distance))
+		robo.setAngle(360);
+		robo.microMove(25);
 		
 	}
 
 	private void goDown() throws InterruptedException{
 		// 3. make the robot move down the screen (use setAngle(angle) and microMove(distance))
+		robo.setAngle(180);
+		robo.microMove(25);
 		
 	}
 
 	private void turnLeft() throws InterruptedException{
 		// 4. Make the robot turn to the left (use setAngle(angle) and microMove(distance))
+		robo.setAngle(270);
+		robo.microMove(25);
 
 	}
 
 	private void turnRight() throws InterruptedException{
 		// 5. make the robot turn to the right (use setAngle(angle) and microMove(distance))
+		robo.setAngle(90);
+		robo.microMove(25);
 		
 	}
 
 	private void spaceBarWasPressed() {
 
 		// 5. Change ROBOTNAME below to match the name of the robot you created in step 1.  THEN, remove the slashes at the beginning of the next two lines
-		//int robotXLocation = ROBOTNAME.getX();
-		//int robotYLocation = ROBOTNAME.getY();
+		int robotXLocation = robo.getX();
+		int robotYLocation = robo.getY();
 		
 		// 6. Print the robotXLocation and robotYLocation variables to the console 
+		System.out.println("x is "+robotXLocation+" y is "+robotYLocation+".");
 		
 		// 7. If robot is at same location as the little girl
+		if (robotXLocation == 725 && robotYLocation == 400) {
+			JOptionPane.showMessageDialog(null, "Go to x 600, y 150");
+		}
 		//      --make a pop-up tell the robot where to go next
 		
 		// 8. Give the user subsequent clues at different locations on the image
+		if (robotXLocation == 600 && robotYLocation == 150) {
+			JOptionPane.showMessageDialog(null, "*CAW* Thee pirate be thee best bet yee got.(go on his hat)");
+		}
+		if (robotXLocation == 575 && robotYLocation == 325) {
+			JOptionPane.showMessageDialog(null, "The treasure is in the swamp of course!(x is 250 and y is 575)");
+		}
+		
 		// (pirate robot, swamp, parrots, etc.)
 		
 		// 9.  If the robot is in the final location
+		if (robotXLocation == 250 && robotYLocation == 575) {
+			JOptionPane.showMessageDialog(null, "You found the treasure!!!");
+		}
 		//     --call the treasureFound() method
 		
 	}
